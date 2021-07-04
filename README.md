@@ -1,0 +1,1 @@
+# Tropic_wise_problem_solve
