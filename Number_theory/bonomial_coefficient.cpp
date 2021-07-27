@@ -26,7 +26,7 @@ ll power(ll b,ll p){
 }
 ll nCr(ll n1,ll r1,ll k)
 {
-    ll ans,ans1,ans2;
+    ll ans=n1,ans1,ans2;
     ans1=power(r1,mod-2);
     ans2=power(k,mod-2);
     ans=(ans*ans1)%mod;
