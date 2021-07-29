@@ -11,21 +11,12 @@ int main()
         cin>>n>>x;
         ll a[n];
         for(ll i=0;i<n;i++) cin>>a[i];
-        ll cnt1=0,cnt2=0;
-        ll sum1=0,sum2=0;
+        ll ans=-1,pre=0,suf=0;
         for(ll i=0;i<n;i++){
-            sum1+=a[i];
-            if(sum1%x!=0){
-                cnt1=i+1;
-            }
-            //else break;
+            pre+=a[i];
+            suf+=a[n-i-1];
+            if(pre%x or suf%x) ans=i+1;
         }
-        for(ll i=n-1;i>=0;i--){
-            sum2+=a[i];
-            if(sum2%x!=0) cnt2=n-i;
-
-        }
-        if(cnt1==0&&cnt2==0) cout<<-1<<endl;
-        else cout<<max(cnt1,cnt2)<<endl;
+        cout<<ans<<endl;
     }
 }
