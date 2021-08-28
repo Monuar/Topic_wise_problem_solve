@@ -6,12 +6,12 @@ int bs(int a[],int n,int x)
     while(l<=r)
     {
         int mid=(l+r)/2;
-        if(a[mid+1]<a[mid]&&mid<r)
+        if(mid<r&&a[mid+1]<a[mid])
         {
             ans=mid+1;
             break;
         }
-        else if(a[mid-1]>a[mid]&&l<mid){
+        else if(l<mid&&a[mid-1]>a[mid]){
             ans=mid;
             break;
         }
@@ -28,7 +28,7 @@ int binsearch(int a[],int l,int r,int x)
         int mid=(l+r)/2;
         if(x==a[mid]){
            ans=mid;
-           return ans;
+           r=mid-1;
         }
         if(a[mid]>x){
             r=mid-1;
@@ -49,7 +49,10 @@ int main()
     int x;
     cin>>x;
     int ind=bs(a,n,x);
+    cout<<"ind "<<ind<<endl;
     int ans1=binsearch(a,0,ind-1,x);
     int ans2=binsearch(a,ind,n-1,x);
+    cout<<"ans1 "<<ans1<<endl;
+    cout<<"ans2 "<<ans2<<endl;
     cout<<max(ans1,ans2)<<endl;
 }
