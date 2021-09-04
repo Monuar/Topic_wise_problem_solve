@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>v[10001];
+int vis[20001];
+void dfs(int node)
+{
+    vis[node]=1;
+    for(int child:v[node]){
+        if(vis[child]==0){
+            dfs(child);
+        }
+    }
+}
+int main()
+{
+   int n,m,a,b;
+   cin>>n>>m;
+   for(int i=1;i<=m;i++){
+    cin>>a>>b;
+        v[a].push_back(b);
+        v[b].push_back(a);
+   }
+   int cc=0;
+   for(int i=1;i<=n;i++){
+        if(vis[i]==0){
+            dfs(i);
+            cc++;
+        }
+   }
+   if(cc==1&&n-1==m) cout<<"YES"<<endl;
+   else cout<<"NO"<<endl;
+}
