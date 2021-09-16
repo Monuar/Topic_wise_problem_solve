@@ -6,7 +6,7 @@ void dfs(int node)
 {
     vis[node]=1;
     for(int child:ar[node]){
-        if(!vis[child]){
+        if(vis[child]==0){
             dfs(child);
         }
     }
@@ -23,7 +23,7 @@ int main()
 
 
    for(int i=1;i<=n;i++){
-        if(!vis[i])
+        if(vis[i]==0)
             dfs(i);
    }
 }
