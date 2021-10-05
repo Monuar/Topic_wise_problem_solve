@@ -6,8 +6,9 @@ int solve(int n)
 
         return 0;
     }
-    solve(n-1);
     cout<<n<<" ";
+    solve(n-1);
+   // cout<<n<<" ";
 }
 int main()
 {
