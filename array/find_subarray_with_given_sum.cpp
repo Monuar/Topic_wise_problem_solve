@@ -9,7 +9,7 @@ int main()
     int start=0;
     long long sum=0;
     for(int i=0;i<n;i++){
-        sum+=a[start];
+        sum+=a[i];
         while(sum>s){
             sum-=a[start];
             start++;
