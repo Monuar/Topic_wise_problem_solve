@@ -17,7 +17,15 @@ int main()
         }
         ind--;
     }
-    a[n]=1;
-    reverse(a,a+n+1);
-    for(int i=0;i<n+1;i++) cout<<a[i]<<" ";
+    if(ind<0) {
+        a[n]=1;
+        reverse(a,a+n+1);
+        for(int i=0;i<=n;i++) cout<<a[i]<<" ";
+    }
+    else{
+        for(int i=0;i<n;i++) cout<<a[i]<<" ";
+    }
+
+
+
 }
